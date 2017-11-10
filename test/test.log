@@ -1,0 +1,13 @@
+{'thermal_displacement_matrices_cif': None, 'moment_order': None, 'q_direction': None, 'masses': None, 'show_irreps': False, 'is_wien2k_p1': False, 'frequency_conversion_factor': None, 'is_displacement': False, 'qpoints': None, 'vasp_mode': False, 'irreps_qpoint': None, 'band_points': None, 'magmom': None, 'is_nosym': False, 'symprec': 1e-05, 'is_moment': False, 'is_check_symmetry': False, 'is_nomeshsym': False, 'fpitch': None, 'is_graph_save': False, 'force_sets_mode': False, 'is_group_velocity': False, 'band_paths': None, 'is_graph_plot': False, 'force_constants_decimals': None, 'is_nac': False, 'is_tetrahedron_method': False, 'fc_spg_symmetry': False, 'tmin': None, 'magmoms': None, 'fmax': None, 'cell_filename': 'pwmat.vasp', 'mesh_numbers': None, 'fc_computation_algorithm': None, 'tmax': None, 'quiet': False, 'pretend_real': False, 'fc_symmetry': None, 'anime': None, 'fmin': None, 'elk_mode': False, 'crystal_mode': False, 'is_thermal_displacements': False, 'is_band_connection': False, 'verbose': False, 'xyz_projection': None, 'fits_debye_model': False, 'projection_direction': None, 'force_constants_mode': False, 'cutoff_radius': None, 'is_read_force_constants': False, 'dynamical_matrix_decimals': None, 'gv_delta_q': None, 'force_sets_zero_mode': False, 'is_legend': False, 'is_plusminus_displacements': False, 'write_mesh': True, 'tstep': None, 'band_labels': None, 'is_projected_thermal_properties': False, 'yaml_mode': False, 'is_thermal_displacement_matrices_cif': None, 'write_dynamical_matrices': False, 'abinit_mode': False, 'primitive_axis': None, 'is_trigonal_displacements': False, 'pwmat_mode': False, 'is_nodiag': False, 'wien2k_mode': False, 'cutoff_frequency': None, 'is_eigenvectors': False, 'lapack_solver': False, 'displacement_distance': None, 'siesta_mode': False, 'modulation': None, 'is_gamma_center': False, 'band_indices': None, 'is_little_cogroup': False, 'write_force_constants': None, 'is_thermal_displacement_matrices': False, 'supercell_dimension': None, 'loglevel': None, 'sigma': None, 'pdos': None, 'is_hdf5': False, 'is_thermal_properties': False, 'pwscf_mode': False, 'is_dos_mode': False}
+[]
+lattice:
+- [     2.866519064000000,     0.167044050700000,     3.988806252000000 ] # a
+- [     0.506651598600000,     2.276789034000000,     1.066503440000000 ] # b
+- [     4.248275646000000,    -0.720889201200000,     6.109932466000000 ] # c
+points:
+- symbol: B  # 1
+  coordinates: [  0.524333203000000,  0.286179684000000,  0.211130641000000 ]
+  mass: 10.811000
+- symbol: N  # 2
+  coordinates: [  0.712761254000000,  0.226678787000000,  0.760721631000000 ]
+  mass: 14.006700

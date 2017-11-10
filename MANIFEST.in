@@ -1,0 +1,4 @@
+include *.txt
+recursive-include docs *.txt
+recursive-include pwmat2phonopy/cui *.py
+recursive-include pwmat2phonopy/interface *.py
