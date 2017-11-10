@@ -20,3 +20,5 @@ You might find it most useful for tasks you already have a relaxed atom.config. 
     If you use --vasp, --wien2k, --abinit, and et. al., PWmat2Phonopy will work exactly the same as the phonopy does.
 
     So, if you want to learn all the functions and how to use, you can consult phonopy website or user guide.
+
+    first edit
