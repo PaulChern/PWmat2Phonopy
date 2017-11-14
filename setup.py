@@ -5,7 +5,7 @@ setup(
     name = 'PWmat2Phonopy',
     author = 'Paul Chern',
     author_email = 'peng.chen.iphy@gmail.com',
-    version = '0.1.0',
+    version = '0.2.1',
     url = 'peng',
     packages = ['pwmat2phonopy',],
     scripts=['bin/PWmat2Phonopy','bin/PWmatRunPhonopy.py','bin/pos2pwmat.py','bin/pwmat2pos.py'],
