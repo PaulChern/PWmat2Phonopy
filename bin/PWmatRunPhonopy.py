@@ -1,13 +1,6 @@
 #!/usr/bin/env python
-
-import sys
 import os
 import subprocess
-
-try:
-    import numpy as np
-except ImportError:
-    print("\033[93m\n ##?| numpy module may be not available ##\n\033[0m")
 
 try:
     from pwmat2phonopy.interface import pwmat_run
@@ -28,6 +21,14 @@ if __name__ == "__main__":
 
     EtotInput = pwmat_run.InputParser(filename='etot.input')
     confs_scf = EtotInput.get_configures()
+    print('current workding directory is: '+dir0)
+    print('phonon will be calculate in: '+dir0+'/phonon')
+    if os.path.exists(dir0+'/pwmat2phonopy.in'):
+        raw_input('Please type enter to edit the \033[93m pwmat2phonopy.in \033[0m file:')
+        subprocess.call(["vim","./pwmat2phonopy.in"])
+    else:
+        pwmat_run.pwmat2phonopyParser.write_input()
+
 #########################
 # produce displacements #
 #########################
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 
 # prepare new k-points for supercell
     mp_n123 = raw_input('>> input new mp_n123 for the supercell: 10 10 10 0 0 0 (type enter to use default value the same as unitcell scf) <<\n')
-    if mp_n123 == '': 
+    if mp_n123 == '':
         print(EtotInput.get_configures()['mp_n123'])
         print("\033[93m\n WARNING: the same k-points as unitcell are used, the calculation for supercell will be heavy! \n\033[0m")
     else:
@@ -98,13 +99,13 @@ if __name__ == "__main__":
         SIGMA = '0.05'
         print(SIGMA)
 
-    pwmat_run.creat_phonopy_conf(DIM=DIM, 
-                                 BAND=BAND, 
-                                 BAND_LABELS=BAND_LABELS, 
-                                 BAND_POINTS=BAND_POINTS, 
-                                 unit=unit, 
-                                 MP=MP, 
-                                 FPITCH=FPITCH, 
+    pwmat_run.creat_phonopy_conf(DIM=DIM,
+                                 BAND=BAND,
+                                 BAND_LABELS=BAND_LABELS,
+                                 BAND_POINTS=BAND_POINTS,
+                                 unit=unit,
+                                 MP=MP,
+                                 FPITCH=FPITCH,
                                  SIGMA=SIGMA)
 
     subprocess.Popen('chmod +x '+'plot_phonon.sh', shell=True)
