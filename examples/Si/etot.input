@@ -1,0 +1,7 @@
+1 1
+IN.ATOM = atom.config
+JOB = scf
+Ecut = 60
+IN.PSP1 = Si.SG15.NCPP.PBE.UPF
+MP_N123 = 10 10 10 0 0 0
+OUT.FORCE =  T

@@ -1,0 +1,12 @@
+#PBS -N NaCl
+#PBS -l nodes=1:ppn=4
+#PBS -q test
+#PBS -e NaCl
+#PBS -o NaCl
+#PBS -l walltime=100:00:00
+
+NPROCS=`wc -l < $PBS_NODEFILE`
+
+cd $PBS_O_WORKDIR
+
+mpirun -np ${NPROCS} PWmat
