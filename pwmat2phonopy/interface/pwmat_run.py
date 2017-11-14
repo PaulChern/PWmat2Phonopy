@@ -126,7 +126,11 @@ class pwmat2phonopyParser(object):
                        'fpitch':{'val':'0.1                                             ', 'comm':'# frequency interval for DOS calculation'},
                        'sigma':{'val':'0.1                                              ', 'comm':'# smearing width for DOS calculation'}
                       }
+<<<<<<< HEAD
         self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'frequency_conversion_factor', 'dos', 'mp', 'fpitch', 'sigma']
+=======
+        self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'frequency_conversion_factor', 'dos', 'mp', 'fptich', 'sigma']
+>>>>>>> 6485a1b4d2a6c41e848c490bc55f04202a56653f
         if filename is not None:
             self.read_input(filename) # store data in self._confs
 
