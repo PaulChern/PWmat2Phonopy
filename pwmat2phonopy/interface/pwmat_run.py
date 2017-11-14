@@ -126,11 +126,8 @@ class pwmat2phonopyParser(object):
                        'fpitch':{'val':'0.1                                             ', 'comm':'# frequency interval for DOS calculation'},
                        'sigma':{'val':'0.1                                              ', 'comm':'# smearing width for DOS calculation'}
                       }
-<<<<<<< HEAD
         self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'frequency_conversion_factor', 'dos', 'mp', 'fpitch', 'sigma']
-=======
-        self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'frequency_conversion_factor', 'dos', 'mp', 'fptich', 'sigma']
->>>>>>> 6485a1b4d2a6c41e848c490bc55f04202a56653f
+
         if filename is not None:
             self.read_input(filename) # store data in self._confs
 
@@ -190,7 +187,7 @@ class pwmat2phonopyParser(object):
             FREQUENCY_CONVERSION_FACTOR = '6.46541380e1'
         else:
             FREQUENCY_CONVERSION_FACTOR = '15.633302'
-    
+
         lines = []
         lines.append('DIM = '+confs['dim']['val'].strip())
         lines.append('PRIMITIVE_AXIS = '+confs['primitive_axis']['val'].strip())
@@ -203,7 +200,7 @@ class pwmat2phonopyParser(object):
         lines.append('FPITCH = '+confs['fpitch']['val'].strip())
         lines.append('SIGMA = '+confs['sigma']['val'].strip())
         lines.append('')
-    
+
         with open('band_dos.conf', 'w') as w:
             w.write("\n".join(lines))
 
