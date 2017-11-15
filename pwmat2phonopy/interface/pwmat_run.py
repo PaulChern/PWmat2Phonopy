@@ -120,14 +120,14 @@ class pwmat2phonopyParser(object):
                        'band':{'val':'0.0 0.0 0.0  0.5 0.0 0.0                          ', 'comm':'# special q points in Brillioun zone'},
                        'band_labels':{'val':'\Gamma  X                                  ', 'comm':'# labels of the special q points'},
                        'band_points':{'val':'101                                        ', 'comm':'# number of q-point along the high symmetry path'},
+                       'fc_symmetry':{'val':'1                                          ', 'comm':'# This tag is used to symmetrize force constants partly'},
                        'frequency_conversion_factor':{'val':'THz                        ', 'comm':'# unit of the frequency:"THz", "cm^-1", "eV", "meV"'},
                        'dos':{'val':'TRUE                                               ', 'comm':'# switch to the DOS calculation'},
                        'mp':{'val':'41 41 41                                            ', 'comm':'# q-mesh for the DOS calculation'},
                        'fpitch':{'val':'0.1                                             ', 'comm':'# frequency interval for DOS calculation'},
                        'sigma':{'val':'0.1                                              ', 'comm':'# smearing width for DOS calculation'}
                       }
-        self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'frequency_conversion_factor', 'dos', 'mp', 'fpitch', 'sigma']
-
+        self._keywords = ['nodes', 'wall_time', 'mp_n123', 'dim', 'primitive_axis', 'band', 'band_labels', 'band_points', 'fc_symmetry', 'frequency_conversion_factor', 'dos', 'mp', 'fpitch', 'sigma']
         if filename is not None:
             self.read_input(filename) # store data in self._confs
 
@@ -187,20 +187,21 @@ class pwmat2phonopyParser(object):
             FREQUENCY_CONVERSION_FACTOR = '6.46541380e1'
         else:
             FREQUENCY_CONVERSION_FACTOR = '15.633302'
-
+    
         lines = []
         lines.append('DIM = '+confs['dim']['val'].strip())
         lines.append('PRIMITIVE_AXIS = '+confs['primitive_axis']['val'].strip())
         lines.append('BAND = '+confs['band']['val'].strip())
         lines.append('BAND_LABELS = '+confs['band_labels']['val'].strip())
         lines.append('BAND_POINTS = '+confs['band_points']['val'].strip())
+        lines.append('FC_SYMMETRY = '+confs['fc_symmetry']['val'].strip())
         lines.append('FREQUENCY_CONVERSION_FACTOR = '+FREQUENCY_CONVERSION_FACTOR)
         lines.append('MP = '+confs['mp']['val'].strip())
         lines.append('DOS = '+confs['dos']['val'].strip())
         lines.append('FPITCH = '+confs['fpitch']['val'].strip())
         lines.append('SIGMA = '+confs['sigma']['val'].strip())
         lines.append('')
-
+    
         with open('band_dos.conf', 'w') as w:
             w.write("\n".join(lines))
 
