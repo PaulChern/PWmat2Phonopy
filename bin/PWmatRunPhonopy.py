@@ -60,6 +60,7 @@ if __name__ == "__main__":
         for tag in confs_scf.keys():
             if 'in.psp' in tag:
                 subprocess.Popen('cp ../'+confs_scf[tag]+' ./'+force, shell=True)
+        EtotInput.set_configures('job', 'scf')
         EtotInput.write_input('./'+force+'/etot.input')
     os.chdir(dir0+'/phonon')
 
