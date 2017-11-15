@@ -1,0 +1,28 @@
+/opt/torque/5.1.2_spool/mom_priv/jobs/382.master.SC: line 10: cd: /home/pwmat/PaulChern/Applications/PWmat2Phonopy/examples/CaTiO3/phonon/forces-003: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+PWmat              0000000000BD4FAF  Unknown               Unknown  Unknown
+PWmat              0000000000576C80  Unknown               Unknown  Unknown
+PWmat              00000000004191CD  Unknown               Unknown  Unknown
+PWmat              0000000000419166  Unknown               Unknown  Unknown
+
+Stack trace terminated abnormally.
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+PWmat              0000000000BD4FAF  Unknown               Unknown  Unknown
+PWmat              0000000000576C80  Unknown               Unknown  Unknown
+PWmat              00000000004191CD  Unknown               Unknown  Unknown
+PWmat              0000000000419166  Unknown               Unknown  Unknown
+
+Stack trace terminated abnormally.
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+PWmat              0000000000BD4FAF  Unknown               Unknown  Unknown
+PWmat              0000000000576C80  Unknown               Unknown  Unknown
+PWmat              00000000004191CD  Unknown               Unknown  Unknown
+PWmat              0000000000419166  Unknown               Unknown  Unknown
+
+Stack trace terminated abnormally.

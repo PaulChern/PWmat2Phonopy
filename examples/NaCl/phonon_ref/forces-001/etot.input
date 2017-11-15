@@ -1,0 +1,9 @@
+1    4
+ecut = 60
+in.psp1 = Na.SG15.NCPP.PBE.UPF
+relax_detail = 1 100 0.01 1 0.05
+in.psp2 = Cl.SG15.NCPP.PBE.UPF
+in.atom = atom.config
+job = scf
+mp_n123 = 3 3 3  0 0 0
+out.force = T

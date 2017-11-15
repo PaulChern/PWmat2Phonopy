@@ -1,0 +1,16 @@
+/opt/torque/5.1.2_spool/mom_priv/jobs/378.master.SC: line 10: cd: /home/pwmat/PaulChern/Applications/PWmat2Phonopy/examples/NaCl/phonon/forces-001: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+
+Stack trace terminated abnormally.
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+
+Stack trace terminated abnormally.
+forrtl: severe (29): file not found, unit 10, file /home/pwmat/fort.10
+Image              PC                Routine            Line        Source             
+
+Stack trace terminated abnormally.

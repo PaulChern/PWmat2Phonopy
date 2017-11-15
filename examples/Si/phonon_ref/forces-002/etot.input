@@ -1,0 +1,7 @@
+1    4
+ecut = 60
+in.psp1 = Si.SG15.NCPP.PBE.UPF
+in.atom = atom.config
+job = scf
+mp_n123 = 5 5 5 0 0 0
+out.force = T

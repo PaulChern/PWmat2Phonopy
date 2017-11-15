@@ -1,0 +1,14 @@
+NODES = 1    4                                            # node1 node2 for pwmat parallel configuration
+WALL_TIME = 100:00:00                                    # wall time for the queue system (torque): hours:minutes:seconds
+MP_N123 = 5 5 5 0 0 0                                 # k-mesh for the supercell calculations; it is 10 10 10 0 0 0 for the unitcell calculation
+DIM = 2 2 2                                               # supercell dimension which will be used to make displacements
+PRIMITIVE_AXIS = 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0    # the primitive cell for building the dynamical matrix
+BAND = 0.0000000000     0.0000000000     0.0000000000        0.2500000000     0.6250000000     0.6250000000        0.0000000000     0.5000000000     0.5000000000        0.0000000000     0.0000000000     0.0000000000        0.5000000000     0.5000000000     0.5000000000        0.5000000000     0.0000000000     0.5000000000        0.5000000000     0.2500000000     0.7500000000        0.5000000000     0.5000000000     0.5000000000                           # special q points in Brillioun zone
+BAND_LABELS = \Gamma K X \Gamma L X W L                                   # labels of the special q points
+BAND_POINTS = 301                                         # number of q-point along the high symmetry path
+FC_SYMMETRY = 1
+FREQUENCY_CONVERSION_FACTOR = cm^-1                         # unit of the frequency:"THz", "cm^-1", "eV", "meV"
+DOS = TRUE                                                # switch to the DOS calculation
+MP = 61 61 61                                             # q-mesh for the DOS calculation
+FPITCH = 0.1                                              # frequency interval for DOS calculation
+SIGMA = 1.0                                               # smearing width for DOS calculation
