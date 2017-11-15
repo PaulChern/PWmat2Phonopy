@@ -3,7 +3,11 @@ PWmat2Phonopy
 =============
 
 PWmat2Phonopy provides an interface to phonopy, which can help PWmat user to perform phonon calculations. 
-You might find it most useful for tasks you already have a relaxed atom.config. Typical usage often looks like this::
+You might find it most useful for tasks you already have a relaxed atom.config. 
+
+    The best thing of PWmat2Phonopy is that with almost only one click the phonon spectrum will be calculated for you.
+
+Typical usage often looks like this::
 
     First, you should include PWmat2Phonopy-x.x.x in you PYTHONPATH and PWmat2Phonopy/bin in your PATH.
 
