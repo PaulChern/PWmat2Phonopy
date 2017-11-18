@@ -54,6 +54,7 @@ if __name__ == "__main__":
 # prepare input files in the forces directory
     forces_dir = subprocess.Popen('ls -d forces*/ | cut -d "/" -f 1', shell=True, stdout=subprocess.PIPE).stdout.read()
     forces_dir = forces_dir.split()
+    #forces_dir.append('forces-residual')
     num_forces = len(forces_dir)
     for i in range(num_forces):
         force = "{pre_filename}-{0:0{width}}".format(i + 1, pre_filename='forces', width=3)
@@ -63,13 +64,6 @@ if __name__ == "__main__":
         EtotInput.set_configures('job', 'scf')
         EtotInput.write_input('./'+force+'/etot.input')
     os.chdir(dir0+'/phonon')
-
-# prepare postprocess script
-    pwmat_run.creat_post_process_script(num_forces=num_forces)
-
-    pwmat2phonopy.creat_phonopy_conf()
-
-    subprocess.Popen('chmod +x '+'plot_phonon.sh', shell=True)
 
 # submit the jobs
     node1 = int(nodes.split()[0])
@@ -84,5 +78,11 @@ if __name__ == "__main__":
         subprocess.Popen('chmod +x '+force+'.pbs', shell=True)
         subprocess.Popen('qsub '+force+'.pbs', shell=True)
     os.chdir(dir0+'/phonon')
+    subprocess.Popen('echo "jobs have been submitted!"', shell=True)
+
+ # prepare postprocess script
+    pwmat_run.creat_post_process_script(num_forces=num_forces)
+    pwmat2phonopy.creat_phonopy_conf()
+    subprocess.Popen('chmod +x '+'plot_phonon.sh', shell=True)
 
     print("\033[93m\n Please run ./plot_phonon.sh to get the plot and data, when the forces calculations are finished! \n\033[0m")
