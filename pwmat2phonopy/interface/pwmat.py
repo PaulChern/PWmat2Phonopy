@@ -187,7 +187,7 @@ def _get_atoms_from_atom_config(lines, symbols):
     expand_symbols = []
     for i in range(line_at, line_at + num_atoms):
         zatom = int(lines[i].split()[0])
-        atoms_z.append(zatom)    
+        atoms_z.append(zatom)
         expand_symbols.append(atom_data[zatom][1])
 
     atoms = Atoms(symbols=expand_symbols,
@@ -242,6 +242,8 @@ def write_supercells_with_displacements(supercell,
                                         pre_filename="atom.config",
                                         supercell_dimension="1x1x1",
                                         width=3):
+    #os.mkdir('phonon/forces-residual')
+    #write_pwmat('phonon/forces-residual/' + 'atom.config', supercell, direct=True)
     write_pwmat('phonon/' + 'atom_'+supercell_dimension+'.config', supercell, direct=True)
     for i, cell in enumerate(cells_with_displacements):
         if cell is not None:
@@ -291,7 +293,7 @@ def _get_scaled_positions_lines(scaled_positions, atoms_Z):
             else:
                 line_str += "%20.16f" % (x)
         line_str += "    0  0  0"
-    
+
         lines.append(line_str)
 
     return lines

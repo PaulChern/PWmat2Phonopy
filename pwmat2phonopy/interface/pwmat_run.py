@@ -94,6 +94,7 @@ def creat_post_process_script(num_forces):
     force = ''
     for i in range(num_forces):
         force += "./{pre_filename}-{0:0{width}}/OUT.FORCE ".format(i + 1, pre_filename='forces', width=3)
+    #force = "./forces-residual/OUT.FORCE " + force
     lines = []
     lines.append('#!/bin/sh')
     lines.append('PWmat2Phonopy --pwmat -f '+force)
@@ -187,7 +188,7 @@ class pwmat2phonopyParser(object):
             FREQUENCY_CONVERSION_FACTOR = '6.46541380e1'
         else:
             FREQUENCY_CONVERSION_FACTOR = '15.633302'
-    
+
         lines = []
         lines.append('DIM = '+confs['dim']['val'].strip())
         lines.append('PRIMITIVE_AXIS = '+confs['primitive_axis']['val'].strip())
@@ -201,7 +202,7 @@ class pwmat2phonopyParser(object):
         lines.append('FPITCH = '+confs['fpitch']['val'].strip())
         lines.append('SIGMA = '+confs['sigma']['val'].strip())
         lines.append('')
-    
+
         with open('band_dos.conf', 'w') as w:
             w.write("\n".join(lines))
 
